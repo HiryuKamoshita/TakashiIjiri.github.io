@@ -1,8 +1,8 @@
-<html>
+ï»¿<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta charset="utf-8">
 <meta http-equiv="Content-Style-Type" content="text/css">
-<meta name="Keywords" content="ˆäKŒh,User Interface,Computer Graphics">
+<meta name="Keywords" content="äº•å°»æ•¬,User Interface,Computer Graphics">
 <meta name="GENERATOR" content="JustSystems Homepage Builder Version 16.0.1.0 for Windows">
 <title>Visual Studio memo</title>
 <link rel="stylesheet" type="text/css" media="screen" href="brict.css">
@@ -51,19 +51,19 @@ pre.code span.variable	        {
   <blockquote>
   <div id="col2o2content">
     <hr>
-    <h1>Visual studio ƒƒ‚ 3 --<b>CImage ‚Å bmp jpeg png tif‚ğ“Ç‚Ş</b> (2012/08/14)--</h1>
+    <h1>Visual studio ãƒ¡ãƒ¢ 3 --<b>CImage ã§ bmp jpeg png tifã‚’èª­ã‚€</b> (2012/08/14)--</h1>
     <hr>
     <hr>
-    @ŠÂ‹« @@: Visual Studio 2010 + Windows 7<br>
-    @Qlurl : <a href="http://msdn.microsoft.com/ja-jp/library/bwea7by5">http://msdn.microsoft.com/ja-jp/library/bwea7by5</a><br>
+    ã€€ç’°å¢ƒ ã€€ã€€: Visual Studio 2010 + Windows 7<br>
+    ã€€å‚è€ƒurl : <a href="http://msdn.microsoft.com/ja-jp/library/bwea7by5">http://msdn.microsoft.com/ja-jp/library/bwea7by5</a><br>
     <hr>
-    @<b><br>
-    @Load (CImage::GetPixel‚ğg‚¤(’x‚¢))</b> <br>
+    ã€€<b><br>
+    ã€€Load (CImage::GetPixelã‚’ä½¿ã†(é…ã„))</b> <br>
     <pre class="code">
 <span class="keyword">static</span> bool t_loadImg1(<span class="keyword">const</span> <span class="keyword">char</span> *fname, <span class="keyword">int</span> &amp;W, <span class="keyword">int</span> &amp;H, <span class="keyword">byte</span>* rgba)
 {
     CImage pic;
-    <span class="keyword">if</span>( !SUCCEEDED( pic.Load( _T(fname) ) ) ) <span class="keyword">return</span> false;<span class="rem">//bmp jpeg png tiff‰æ‘œ‚Ì“Ç‚İ‚İ(bmp jpeg‚Ì‚İ“®ìŠm”FÏ‚İ)</span>
+    <span class="keyword">if</span>( !SUCCEEDED( pic.Load( _T(fname) ) ) ) <span class="keyword">return</span> false;<span class="rem">//bmp jpeg png tiffç”»åƒã®èª­ã¿è¾¼ã¿(bmp jpegã®ã¿å‹•ä½œç¢ºèªæ¸ˆã¿)</span>
     
     W    = pic.GetWidth ();
     H    = pic.GetHeight();
@@ -72,47 +72,47 @@ pre.code span.variable	        {
     <span class="keyword">for</span>( <span class="keyword">int</span> y=<span class="num">0</span>, i=<span class="num">0</span>; y&lt;H; ++y     )
     <span class="keyword">for</span>( <span class="keyword">int</span> x=<span class="num">0</span>     ; x&lt;W; ++x, ++i)
     {
-        COLORREF c = pic.GetPixel( x, y );<span class="rem">//‰æ‘f’lget (‚±‚±‚ª”ñí‚É’x‚¢)</span>
-        rgba [ i*<span class="num">4</span> + <span class="num">0</span>] = GetRValue(c); <span class="rem">//‰æ‘f’lƒRƒs[</span>
-        rgba [ i*<span class="num">4</span> + <span class="num">1</span>] = GetGValue(c); <span class="rem">//‰æ‘f’lƒRƒs[</span>
-        rgba [ i*<span class="num">4</span> + <span class="num">2</span>] = GetBValue(c); <span class="rem">//‰æ‘f’lƒRƒs[</span>
+        COLORREF c = pic.GetPixel( x, y );<span class="rem">//ç”»ç´ å€¤get (ã“ã“ãŒéå¸¸ã«é…ã„)</span>
+        rgba [ i*<span class="num">4</span> + <span class="num">0</span>] = GetRValue(c); <span class="rem">//ç”»ç´ å€¤ã‚³ãƒ”ãƒ¼</span>
+        rgba [ i*<span class="num">4</span> + <span class="num">1</span>] = GetGValue(c); <span class="rem">//ç”»ç´ å€¤ã‚³ãƒ”ãƒ¼</span>
+        rgba [ i*<span class="num">4</span> + <span class="num">2</span>] = GetBValue(c); <span class="rem">//ç”»ç´ å€¤ã‚³ãƒ”ãƒ¼</span>
         rgba [ i*<span class="num">4</span> + <span class="num">3</span>] = <span class="num">128</span>;
     }
     <span class="keyword">return</span> true;
 }</pre>
-    @‚â‚Á‚Ä‚é–‚Í<br>
-    @1)CImage::Load()‚Å‰æ‘œ‚ğ“Ç‚İ‚ñ‚Å<br>
-    @2)CImage::GetWidth() / GetHeight()‚Å‰æ‘œƒTƒCƒY‚ğ‚à‚ç‚Á‚Ä<br>
-    @3)CImage::GetPixel()‚Å‰æ‘f’l‚ğCOLORREF‚Å‚à‚ç‚¤<br>
+    ã€€ã‚„ã£ã¦ã‚‹äº‹ã¯<br>
+    ã€€1)CImage::Load()ã§ç”»åƒã‚’èª­ã¿è¾¼ã‚“ã§<br>
+    ã€€2)CImage::GetWidth() / GetHeight()ã§ç”»åƒã‚µã‚¤ã‚ºã‚’ã‚‚ã‚‰ã£ã¦<br>
+    ã€€3)CImage::GetPixel()ã§ç”»ç´ å€¤ã‚’COLORREFã§ã‚‚ã‚‰ã†<br>
     <br>
     <br>
-    @<b>Load (CImage::GetPixelAddress‚ğg‚¤)</b><br>
-    @GetPixel‚ª’x‚¢‚Ì‚ÅAPixel‚ÌAddress‚É’¼ÚƒAƒNƒZƒX‚µ‚½•û‚ª—Ç‚¢B<br>
-    @‰æ‘f‚ª24bits‚Ì‚Æ‚«‚Ì‚İAAddress‚©‚ç’¼ÚRGB‚ğ“¾‚é‚æ‚¤‘‚«’¼‚µ‚½‚Ì‚ªˆÈ‰ºB
+    ã€€<b>Load (CImage::GetPixelAddressã‚’ä½¿ã†)</b><br>
+    ã€€GetPixelãŒé…ã„ã®ã§ã€Pixelã®Addressã«ç›´æ¥ã‚¢ã‚¯ã‚»ã‚¹ã—ãŸæ–¹ãŒè‰¯ã„ã€‚<br>
+    ã€€ç”»ç´ ãŒ24bitsã®ã¨ãã®ã¿ã€Addressã‹ã‚‰ç›´æ¥RGBã‚’å¾—ã‚‹ã‚ˆã†æ›¸ãç›´ã—ãŸã®ãŒä»¥ä¸‹ã€‚
     <pre class="code">
 <span class="keyword">static</span> bool t_loadImg2(<span class="keyword">const</span> <span class="keyword">char</span> *fname, <span class="keyword">int</span> &amp;W, <span class="keyword">int</span> &amp;H, <span class="keyword">byte</span>* rgba)
 {
     CImage pic;
-    <span class="keyword">if</span>( !SUCCEEDED( pic.Load( _T(fname) ) ) ) <span class="keyword">return</span> false;<span class="rem">//bmp jpeg png tiff‰æ‘œ‚Ì“Ç‚İ‚İ(bmp jpeg‚Ì‚İ“®ìŠm”FÏ‚İ)</span>
+    <span class="keyword">if</span>( !SUCCEEDED( pic.Load( _T(fname) ) ) ) <span class="keyword">return</span> false;<span class="rem">//bmp jpeg png tiffç”»åƒã®èª­ã¿è¾¼ã¿(bmp jpegã®ã¿å‹•ä½œç¢ºèªæ¸ˆã¿)</span>
     
     <span class="keyword">int</span> pitch   = pic.GetPitch();
     <span class="keyword">if</span>( pitch &lt; <span class="num">0</span>) pitch *= -<span class="num">1</span>;
-    <span class="rem">//ªƒ[ƒW‚Ìƒsƒbƒ`(s•ûŒü‚ÌƒoƒCƒg”)‚ğ•Ô‚µ‚Ü‚·B</span>
-    <span class="rem">//–ß‚è’l‚ª•‰‚Ì’l‚Ìê‡Aƒrƒbƒgƒ}ƒbƒv‚Í¶‰º‹÷‚ğ‹N“_‚Æ‚·‚é‹t•ûŒü (‰º‚©‚çã) ‚Ì DIB ‚Å‚·B</span>
-    <span class="rem">//–ß‚è’l‚ª³‚Ì’l‚Ìê‡Aƒrƒbƒgƒ}ƒbƒv‚Í¶ã‹÷‚ğ‹N“_‚Æ‚·‚é‡•ûŒü (ã‚©‚ç‰º‚ÌŒü‚«) ‚Ì DIB ‚Å‚·</span>
+    <span class="rem">//â†‘ãƒ¡ãƒ¼ã‚¸ã®ãƒ”ãƒƒãƒ(è¡Œæ–¹å‘ã®ãƒã‚¤ãƒˆæ•°)ã‚’è¿”ã—ã¾ã™ã€‚</span>
+    <span class="rem">//æˆ»ã‚Šå€¤ãŒè² ã®å€¤ã®å ´åˆã€ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã¯å·¦ä¸‹éš…ã‚’èµ·ç‚¹ã¨ã™ã‚‹é€†æ–¹å‘ (ä¸‹ã‹ã‚‰ä¸Š) ã® DIB ã§ã™ã€‚</span>
+    <span class="rem">//æˆ»ã‚Šå€¤ãŒæ­£ã®å€¤ã®å ´åˆã€ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã¯å·¦ä¸Šéš…ã‚’èµ·ç‚¹ã¨ã™ã‚‹é †æ–¹å‘ (ä¸Šã‹ã‚‰ä¸‹ã®å‘ã) ã® DIB ã§ã™</span>
 
     W    = pic.GetWidth ();
     H    = pic.GetHeight();
     rgba = <span class="keyword">new</span> <span class="keyword">byte</span>[W*H*<span class="num">4</span>];
 
-    <span class="keyword">int</span> byteNum = pitch / W; <span class="rem">//‚±‚ê‚ª1pixel‚ ‚½‚è‚ÌƒoƒCƒg”</span>
+    <span class="keyword">int</span> byteNum = pitch / W; <span class="rem">//ã“ã‚ŒãŒ1pixelã‚ãŸã‚Šã®ãƒã‚¤ãƒˆæ•°</span>
 
     <span class="keyword">if</span>( byteNum == <span class="num">3</span> ) <span class="rem">//24bit color </span>
     {
         <span class="keyword">for</span>( <span class="keyword">int</span> y=<span class="num">0</span>, i=<span class="num">0</span>; y&lt;H; ++y     )
         <span class="keyword">for</span>( <span class="keyword">int</span> x=<span class="num">0</span>     ; x&lt;W; ++x, ++i)
         {
-            <span class="rem">//RGB(24bit)‚É‘Î‚·‚éƒAƒhƒŒƒX‚ğbyte‚ÉƒLƒƒƒXƒg‚µ‚Ä‚é‚Ì‚Å, R G B‡‚Ìˆê”Ô‰ºˆÊ‚ÌB‚ğw‚·‚à‚Ì‚É‚È‚é</span>
+            <span class="rem">//RGB(24bit)ã«å¯¾ã™ã‚‹ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’byteã«ã‚­ãƒ£ã‚¹ãƒˆã—ã¦ã‚‹ã®ã§, R G Bé †ã®ä¸€ç•ªä¸‹ä½ã®Bã‚’æŒ‡ã™ã‚‚ã®ã«ãªã‚‹</span>
             <span class="keyword">byte</span> *c = (<span class="keyword">byte</span>*)pic.GetPixelAddress( x, y );
             rgba[ i*<span class="num">4</span> + <span class="num">3</span>] = <span class="num">128</span>;
             rgba[ i*<span class="num">4</span> + <span class="num">2</span>] = *c ; ++c;
@@ -120,7 +120,7 @@ pre.code span.variable	        {
             rgba[ i*<span class="num">4</span> + <span class="num">0</span>] = *c ; 
         }
     }
-    <span class="keyword">else</span> <span class="rem">//‚»‚Ì‘¼</span>
+    <span class="keyword">else</span> <span class="rem">//ãã®ä»–</span>
     {
         <span class="keyword">for</span>( <span class="keyword">int</span> y=<span class="num">0</span>, i=<span class="num">0</span>; y&lt;H; ++y     )
         <span class="keyword">for</span>( <span class="keyword">int</span> x=<span class="num">0</span>     ; x&lt;W; ++x, ++i)
@@ -135,14 +135,14 @@ pre.code span.variable	        {
     <span class="keyword">return</span> true;
 }
 </pre>
-    @‚±‚ÌƒR[ƒh‚ÍAjpeg/bmp‚Å“®ìŠm”FÏ‚İB<br>
-    @24bit‚Å‚È‚¢‰æ‘œ‚âAColor table•t‚«‚Ìtif‚È‚Ç‚Í‚à‚¤­‚µ×‚©‚Èˆ—‚ª•K—v‚É‚È‚éB<br>
-    @<br>
-    @ˆÈ‰º‚ÍAGetPixelAddress‚Ì(„‚Ì)ƒCƒ[ƒWB24bit‚Å1ƒuƒƒbƒN(RGB)‚È‚Ì‚ÅA<br>
-    @—á‚¦‚ÎCOLORREF(32bit)‚Æ‚©‚ÉƒLƒƒƒXƒg‚·‚é‚Æ(e.g. (COLORREF*)GetPixelAddress(x,y))A<br>
-    @’[‚Á‚±‚Å1byte•ª“¥‚İ‰z‚¦‚ÄA•s³ƒAƒNƒZƒX‚ª”­¶‚µ‚ÄAÅˆ«—‚¿‚éB<br>
+    ã€€ã“ã®ã‚³ãƒ¼ãƒ‰ã¯ã€jpeg/bmpã§å‹•ä½œç¢ºèªæ¸ˆã¿ã€‚<br>
+    ã€€24bitã§ãªã„ç”»åƒã‚„ã€Color tableä»˜ãã®tifãªã©ã¯ã‚‚ã†å°‘ã—ç´°ã‹ãªå‡¦ç†ãŒå¿…è¦ã«ãªã‚‹ã€‚<br>
+    ã€€<br>
+    ã€€ä»¥ä¸‹ã¯ã€GetPixelAddressã®(ç§ã®)ã‚¤ãƒ¡ãƒ¼ã‚¸ã€‚24bitã§1ãƒ–ãƒ­ãƒƒã‚¯(RGB)ãªã®ã§ã€<br>
+    ã€€ä¾‹ãˆã°COLORREF(32bit)ã¨ã‹ã«ã‚­ãƒ£ã‚¹ãƒˆã™ã‚‹ã¨(e.g. (COLORREF*)GetPixelAddress(x,y))ã€<br>
+    ã€€ç«¯ã£ã“ã§1byteåˆ†è¸ã¿è¶Šãˆã¦ã€ä¸æ­£ã‚¢ã‚¯ã‚»ã‚¹ãŒç™ºç”Ÿã—ã¦ã€æœ€æ‚ªè½ã¡ã‚‹ã€‚<br>
     <br>
-    @‰º}‚Å‚ÍA—×‚Ì‰æ‘f’l‚ªAƒƒ‚ƒŠã‚Å‚à—×‚É‚ ‚é‚æ‚¤‚É‘‚¢‚Ä‚ ‚é‚ªA‚»‚ê‚ª‚¢‚Â‚à•Ûá‚³‚ê‚Ä‚¢‚é‚©‚Í•s–¾B<br>
+    ã€€ä¸‹å›³ã§ã¯ã€éš£ã®ç”»ç´ å€¤ãŒã€ãƒ¡ãƒ¢ãƒªä¸Šã§ã‚‚éš£ã«ã‚ã‚‹ã‚ˆã†ã«æ›¸ã„ã¦ã‚ã‚‹ãŒã€ãã‚ŒãŒã„ã¤ã‚‚ä¿éšœã•ã‚Œã¦ã„ã‚‹ã‹ã¯ä¸æ˜ã€‚<br>
     <br>
     <table border="0">
       <tbody>
@@ -153,10 +153,10 @@ pre.code span.variable	        {
     </table>
     <br>
     <br>
-    @‚±‚Ìƒy[ƒW‚É‚ ‚éƒR[ƒh‚Ì“®ì‚Ì•ÛØ‚Í‚Å‚«‚Ü‚¹‚ñB©ŒÈÓ”C‚Åg‚Á‚Ä‚­‚¾‚³‚¢Bƒ‰ƒCƒZƒ“ƒX‚Í<a href="http://www.kmonos.net/nysl/">NYSL Version 0.9982</a>‚Å‚·B<br>
+    ã€€ã“ã®ãƒšãƒ¼ã‚¸ã«ã‚ã‚‹ã‚³ãƒ¼ãƒ‰ã®å‹•ä½œã®ä¿è¨¼ã¯ã§ãã¾ã›ã‚“ã€‚è‡ªå·±è²¬ä»»ã§ä½¿ã£ã¦ãã ã•ã„ã€‚ãƒ©ã‚¤ã‚»ãƒ³ã‚¹ã¯<a href="http://www.kmonos.net/nysl/">NYSL Version 0.9982</a>ã§ã™ã€‚<br>
     <hr />
     
-    <div id="footer">Copyright 2012~ Takashi Ijiri(ˆäKŒh), All rights reserved.</div>
+    <div id="footer">Copyright 2012~ Takashi Ijiri(äº•å°»æ•¬), All rights reserved.</div>
   </div>
   </blockquote>
 </div>

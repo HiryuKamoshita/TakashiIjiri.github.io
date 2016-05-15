@@ -1,6 +1,6 @@
 ﻿<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta charset="utf-8">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <meta name="Keywords" content="井尻敬,User Interface,Computer Graphics">
 <meta name="GENERATOR" content="JustSystems Homepage Builder Version 16.0.1.0 for Windows">
@@ -90,10 +90,10 @@ pre.code span.variable	{
 
 
 </div>
-  　　　　　<img src="probability/sampling.png" width="591" height="415" border="0"><br>
+  　　　　　<img src="sampling.png" width="591" height="415" border="0"><br>
   <br>
   　　 　この方法で得られたMyRand()の確率密度関数が以下. N<sub>pt</sub>　を大きくすると，だんだん綺麗な一様分布になる．binのサイズh=0.05とした．<br>
-  　　　　<img src="probability/sampling1.png" width="699" height="212" border="0"><br>
+  　　　　<img src="sampling1.png" width="699" height="212" border="0"><br>
   　　　　<br>
   <br>
   <br>
@@ -117,7 +117,7 @@ pre.code span.variable	{
     z2 = sqrt( -<span class="num">2.0</span> * log( x1 ) ) * cos( <span class="num">2.0</span> * M_PI * x2);
 }</pre>
   　　　BMrandで発生させた乱数列の確率密度関数は以下(発生点数N<sub>pt</sub> = 1000000とした)．確かにN(0,1)の確率密度関数に一致している．<br>
-  　　　<img src="probability/sampling2.png" width="524" height="178" border="0"><br>
+  　　　<img src="sampling2.png" width="524" height="178" border="0"><br>
   　　　<br>
   <br>
   <br>
@@ -135,7 +135,7 @@ pre.code span.variable	{
 }</pre>
   　　　この例では,Xiを，[0,1]の一様分布に従う確率変数とした．<br>
   　　　先の方法と同様にして,Z<sub>n</sub>をN<sub>pt</sub>個発生させの確率密度関数を書いてみる．<br>
-  　　　<img src="probability/sampling3.png" width="786" height="173" border="0"><br>
+  　　　<img src="sampling3.png" width="786" height="173" border="0"><br>
   　　　確かにnを大きくするのに従い，ばらつきが(分散)小さくなっているのがわかる．<br>
   　　　これでnを無限大に飛ばせば, 確率変数Znの値は，0に収束する(常に値0を取るようになる)。<br>
   <br>
@@ -154,7 +154,7 @@ pre.code span.variable	{
 }</pre>
   　　　先の方法と同様にして,ZnをN<sub>pt</sub>個発生させの確率密度関数を書いてみる．<br>
   　　　確かにnを大きくするのに従い，密度関数の形状が標準正規分布に近づいて行くのがわかる．<br>
-  　　　<img src="probability/sampling4.png" width="750" height="256" border="0"><br>
+  　　　<img src="sampling4.png" width="750" height="256" border="0"><br>
   　　 ここでは,確率変数X<sub>i</sub>が一様分布に従うとしたが，元となる分布ななんでもよい(これが中心極限定理の面白いところ)．)<br>
   <br>
   <br>
