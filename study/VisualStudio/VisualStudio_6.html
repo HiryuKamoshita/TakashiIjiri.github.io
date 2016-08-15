@@ -64,9 +64,10 @@ pre.code span.variable	{
     <h3>memo</h3>
 
 <p>
-    大きなvolumeを処理するツールを作成するためDicom toolkitとOpenCVを同時にVisual C++（2015）で利用する必要が生じた。<br>
-    少しはまるポイントがあったのでメモを残しておく．正直、OpenCVとC++の組み合わせはあまりお勧めじゃないかも。<br>
-    どうしてもこの組み合わせが必要でなければ、OpenCV+Pythonのほうが。。。<br><br><br>
+    3次元画像処理ツールを作成するため，Dicom toolkitとOpenCVを同時にVisual C++ 2015で利用する必要が生じた.<br>
+    opencvとdcmtkコンパイル方法のメモを残しておく．<br>
+    ただ，OpenCVとC++の組み合わせはあまりお勧めではない．<br>
+    どうしてもこの組み合わせが必要でなければ、OpenCV + Pythonのほうが。。。<br><br><br>
 </p>
 
 
@@ -96,10 +97,8 @@ pre.code span.variable	{
 <h3>必要なファイルの準備</h3>
 
 <ul class="MyList">
-    <li><a href="http://opencv.org/downloads.htmlからOpenCV">本家のページから</a> OpenCV for windowsの好きなバージョンをダウンロード</li>
-    <li>展開した中身を『c:\opencv310』にコピー</li>
-    <li><a href="github.com/Itseez/opencv_contrib">こちらから</a> opencv_contrib-masterをダウンロード</li>
-    <li>modulesフォルダを『C:\opencv310\build\modules』にコピー</li>
+    <li><a href="http://opencv.org/downloads.htmlからOpenCV">OpenCVのページから</a> OpenCV for windowsの好きなバージョンをダウンロードし，展開した中身を『c:\opencv310』にコピー</li>
+    <li><a href="github.com/Itseez/opencv_contrib">こちらから</a> opencv_contrib-masterというモジュールをダウンロードし，modulesディレクトリを『C:\opencv310\build\modules』にコピー</li>
 </ul>
 
 
@@ -109,11 +108,11 @@ pre.code span.variable	{
     
 <ul class="MyList">
 
-    <li>ソースフォルダを『C:/opencv310/sources』と，ビルドフォルダを『C:/opencv310/build』と指定する</li>
+    <li>CMakeを起動し，ソースフォルダを『C:/opencv310/sources』と，ビルドフォルダを『C:/opencv310/build』と指定する</li>
     <li>Configureボタンを押して，Visual studioのバージョンとアーキテクチャを指定（今回は, Visual Studio 2015 win 64とした). するとconfigureが始まる．</li>
     <li>OPENCV_EXTRA_MODULES_PATHにC:/opencv310/build/modulesを指定</li>
-    <li>static libとして利用するなら... 『BUILD_SHARED_LIBS』チェックを外し，BUILD_WITH_STATIC_CRTをチェック</li>
-    <li>generateするとopencv/build以下にOpenCV.slnができる</li>
+    <li>openCVを静的にリンクするなら... 『BUILD_SHARED_LIBS』チェックを外し，BUILD_WITH_STATIC_CRTをチェック</li>
+    <li>generateすると『build』ディレクトリの中にOpenCV.slnができる</li>
 </ul>
 
 
@@ -125,7 +124,7 @@ pre.code span.variable	{
     <li>OpenCV.slnを開く</li>
     <li>プロジェクト>プロパティ>C/C++>コード生成>ランタイムライブラリにて、/MTか/MDを選択．実際に利用する環境に合わせないと、後のコンパイルでこける。</li>
     <li>全てビルドする</li>
-    <li>スタティックライブラリとして利用するなら、生成された.libファイル群と『./source/include』ディレクトリを見えるところにおいておけば利用できる</li>
+    <li> 生成された.libファイル群と『./source/include』ディレクトリを, Visual Studioから見えるところに配置</li>
     <li>『bluid/3rdparty/lib』以下の.libも、visual studioからみえる位置にコピーする. </li>
     <li>ippcvmt.libは『C:\opencv310\sources\3rdparty\ippicv\unpack\ippicv_win\lib\intel64』にあるので注意．（これも必要）</li>
     <li><a href="https://github.com/atinfinity/lab/wiki/OpenCV-Change-Logs%EF%BC%88%E6%84%8F%E8%A8%B3%EF%BC%89">version 3.1以降，opencv_halは，coreとかに統合されたらしい</a>
@@ -137,20 +136,19 @@ pre.code span.variable	{
 <h1>Dcmtkのコンパイル</h1>
 
     <ul class="MyList">
-        <li><a href="http://dicom.offis.de/">dcmtkのページ</a>から、ソースをダウンロード</li>
-        <li>今回は3.6を利用した:<a href="ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk360/dcmtk-3.6.0.zip">ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk360/dcmtk-3.6.0.zip</a></li>
+        <li><a href="http://dicom.offis.de/">dcmtkのページ</a>から、ソースをダウンロード．今回は3.6を利用した:<a href="ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk360/dcmtk-3.6.0.zip">ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk360/dcmtk-3.6.0.zip</a></li>
         <li>zipを展開する</li>
         <li>CMakeからzipを展開したディレクトリを指定し, Visual Studio用のプロジェクトファイルを作成（今回はVisual Studio 2015 x64を指定）</li>
         <li>プロジェクト>プロパティ>C/C++>コード生成>ランタイムライブラリにて、/MTか/MDを選択．OpenCVと一緒に使うなら、OpenCVのコンパイル時と同じものを指定する</li>
         <li>プロジェクトを開きビルドする．</li>
-        <li>必要なlibファイルとincludeファイル群をVisual Studio絡みえる位置においておく</li>
+        <li>必要なlibファイルとincludeファイル群をVisual Studioからみえる位置におけば利用できる</li>
     </ul>
 
 <hr>
 <h1>tips</h1>
 
     <ul class="MyList">
-        <li>外部ライブラリ（OpenCVやdcmtk）を利用する場合は、外部ライブラリをコンパイルする環境をそろえる必要がある</li>
+        <li>外部ライブラリ（OpenCVやdcmtk）を利用する場合は、これらをコンパイルする環境をそろえる必要がある</li>
         <li>特に，VCのバージョンとランタイムライブラリ（MT MD）をそろえる</li>
     </ul>
 
