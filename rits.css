@@ -327,6 +327,20 @@ ul.PubList1 li
 }
 
 
+ul.MyList
+{
+    margin: 0em 1em 1em 3em;
+}
+
+ul.MyList li 
+{
+    margin    : 0.1em 0 0 0;
+    text-align:justify;
+    font-size :12pt;
+}
+
+
+
 
 
 .ProjImg
